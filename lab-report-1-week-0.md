@@ -38,7 +38,7 @@ For this question, we had to examine each line. /Users/joe/lecture1/Hello.java a
 
 For this lecture, we started off with answering this question. The remote computer/machine may be more powerful, there is better security, and there might be software in the remote machine that we need that the physical computer doesn’t have.
 
-![Lab Screenshot10](Screen-Shot-2022-09-30-at-12.19.56-PM.png)
+![Lab Screenshot10](Screen-Shot-2022-09-30-at-12.38.30-PM.png)
 
 The last couple of things we learned are above. The scp command copies files from one computer to another. The ~ character (“tilde”) refers to your home directory. 
 
