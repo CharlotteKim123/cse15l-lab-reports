@@ -1,44 +1,44 @@
-# **Week 0/Week 1**
+# **Remote Access**
 
-For Week 0, we had to make our own websites for lab reports. In order to do so, I had to create a repository.
+In this lab report, I will be demostrating the process for logging into a remote computer and running commands (and some tips to make this process easier).
 
-![Lab Screenshot1](Screen-Shot-2022-09-30-at-12.02.30-PM.png)
+## **Installing VS Code**
 
-I had to click the “+” to create a new repository. Here, I was able to make a Pages site. I went into settings and clicked Pages. Below is what the Pages section looks like:
+![Lab Screenshot1](Screen Shot 2022-10-13 at 11.24.11 PM.png)
 
-![Lab Screenshot2](Screen-Shot-2022-09-30-at-12.03.07-PM.png)
+First things first, we have to download and install Visual Studio Code. In order to do so, you have to click the download button (or the arrow next to it to find the version you need for your computer). Once you follow the instructions for installation, you should get something like this: 
 
-In order to launch the site, I had to make it first. I did so using the Github desktop and VS Code:
+![Lab Screenshot2](Screen Shot 2022-10-14 at 5.46.18 PM.png)
 
-![Lab Screenshot3](Screen-Shot-2022-09-30-at-12.03.31-PM.png)
+## **Connecting Remotely**
 
-Each file contains a part of the website. Once I made some edits and markdowns (format, fonts, images, and links), I committed the changes and pushed them to origins:
+To connect remotely, you need to log in to your remote account. In order to do so, type ssh cs15lfa22zz@ieng6.ucsd.edu (replace zz with the letters unique to you). Mine is ju. It will prompt you with a password. Once you log in, you should expect to either see what's below if you has previous failed log ins or the second photo.
 
-![Lab Screenshot4](Screen-Shot-2022-09-30-at-12.13.47-PM.png)
+![Lab Screenshot3](Screen Shot 2022-10-14 at 12.01.26 AM.png)
+![Lab Screenshot4](Screen Shot 2022-10-13 at 11.48.20 PM.png)
 
-Once I launched the website, my page was created:
+## **Running Some Commands**
 
-![Lab Screenshot5](Screen-Shot-2022-09-30-at-12.02.08-PM.png)
+Below are some commands I tried (cat path and ls -lat).
 
-For week 1, we learned how to use commands in the terminal. We learned the vocab that will be used and what each command means:
+![Lab Screenshot5](Screen Shot 2022-10-13 at 11.50.27 PM.png)
 
-![Lab Screenshot6](Screen-Shot-2022-09-30-at-12.38.30-PM.png)
+## **Moving files over SSH with SCP**
 
-After learning what each command does, we put them into practice for the question below:
+I first tested the WhereAmI.java file on my computer:
 
-![Lab Screenshot7](Screen-Shot-2022-09-30-at-12.18.20-PM.png)
+![Lab Screenshot6](Screen Shot 2022-10-13 at 11.54.00 PM.png)
 
-To answer this, we look at the commands. We know that cd changes the directory, so we typed cd lecture1/messages. Next, since cat prints the contents of the file(s), we typed cat en-us.txt es.mx.txt zh-cn.txt. The shorter method is to type cat lecture1/messages/en-us.txt… and write full paths for each language.
+To transfer the file to my remote computer, I typed ssh cs15lfa22ju@ieng6.ucsd.edu. When I tested the file on my remote account, I got the same result as above.     
 
-![Lab Screenshot8](Screen-Shot-2022-09-30-at-12.18.33-PM.png)
+## **Setting an SSH Key**
 
-For this question, we had to examine each line. /Users/joe/lecture1/Hello.java and ../Hello.java are equivalent to each other because .. refers to everything before /Hello.java. ../lecture1/Hello.java is not equivalent because it’s basically saying /Users/joe/Users/joe/lecture1/lecture1/Hello.java.
+In order to set an ssh key, I typed ssh-keygen. I then set a passphrase and got the following below. 
 
-![Lab Screenshot9](Screen-Shot-2022-09-30-at-12.19.16-PM.png)
+![Lab Screenshot7](Screen Shot 2022-10-14 at 12.01.12 AM.png)
 
-For this lecture, we started off with answering this question. The remote computer/machine may be more powerful, there is better security, and there might be software in the remote machine that we need that the physical computer doesn’t have.
+## **Optimizing Remote Running**
 
-![Lab Screenshot10](Screen-Shot-2022-09-30-at-12.19.56-PM.png)
+One of the ways I optimized remote running (besides the SSH key) was using the up and down arrows to get the commands I typed previously so I could run them again. This is a trick I've used since I've learned to code (below is me using the up arrow key to get the exit command back).
 
-The last couple of things we learned are above. The scp command copies files from one computer to another. The ~ character (“tilde”) refers to your home directory. 
-
+![Lab Screenshot8](Screen Shot 2022-10-14 at 12.02.30 AM.png)
