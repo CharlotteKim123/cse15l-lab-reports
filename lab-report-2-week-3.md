@@ -48,10 +48,6 @@ public class SearchEngine {
 
 ```
 
-Which methods in your code are called
-What the values of the relevant arguments to those methods are, and the values of any relevant fields of the class
-If those values change, how they change by the time the request is done processing
-
 ![default Picture](Screen Shot 2022-10-27 at 11.57.27 AM.png)
 
 The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /. Since the default value was an empty string, "String " is returned. If / is changed, it goes to the if statements to check if they need to add a string or search for a string.
