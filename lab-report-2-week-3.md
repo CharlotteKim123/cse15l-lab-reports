@@ -58,7 +58,7 @@ The handleRequest method was called after the URL was created in the search engi
 
 ![search Picture](Screen Shot 2022-10-27 at 12.10.09 PM.png)
 
-The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /search and the string/argument "app". Since I added the string "pineapple" and am searching for a string that contains "app", "The string is now pineapple" is returned. If /search is changed, it returns the "404 not found" string or checks for the /add. If the string "app" is changed, it prints the new string that contains the new inputted string.
+The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /search and the string/argument "app". Since I added the string "pineapple" and am searching for a string that contains "app", "The string is now pineapple" is returned. If /search is changed, it either returns the "404 not found" string or checks for the /add. If the string "app" is changed, it prints the new string that contains the new inputted string.
 
 ## **Part 2**
 
