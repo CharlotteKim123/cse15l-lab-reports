@@ -14,13 +14,19 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return String.format("String: %d", str);
+            return String.format("String: %s", str);
         } else {
             System.out.println("Path: " + url.getPath());
             if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
                 str += parameters[1];
-                return String.format("The string is now %d", parameters[1], str);
+                return String.format("The string is now %s", parameters[1], str); 
+            }
+            if (url.getPath().contains("/search")){
+                String[] parameters = url.getQuery().split("=");
+                if (str.contains(parameters[1])){
+                    return String.format("The string is now %s", str, str);
+                }
             }
             return "404 Not Found!";
         }
@@ -42,7 +48,21 @@ public class SearchEngine {
 
 ```
 
-Unfortunately, my code was not working, so there are no screenshots for this part.
+Which methods in your code are called
+What the values of the relevant arguments to those methods are, and the values of any relevant fields of the class
+If those values change, how they change by the time the request is done processing
+
+![default Picture](Screen Shot 2022-10-27 at 11.57.27 AM.png)
+
+The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /. Since the default value was an empty string, "String " is returned. If / is changed, it goes to the if statements to check if they need to add a string or search for a string.
+
+![add Picture](Screen Shot 2022-10-27 at 12.11.03 PM.png)
+
+The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /add and the string "pineapple". Since I added the string "pineapple", "The string is now pineapple" is returned. If /add is changed, it goes to the next if statement to check if they need to search for a string or else. If the string "pineapple" is changed, it prints the new string that was inputted.
+
+![search Picture](Screen Shot 2022-10-27 at 12.10.09 PM.png)
+
+The handleRequest method was called after the URL was created in the search engine class. The relevant argument for this method in this screenshot was /search and the string/argument "app". Since I added the string "pineapple" and am searching for a string that contains "app", "The string is now pineapple" is returned. If /search is changed, it returns the "404 not found" string or checks for the /add. If the string "app" is changed, it prints the new string that contains the new inputted string.
 
 ## **Part 2**
 
@@ -71,6 +91,8 @@ public void testReversed2() {
     assertArrayEquals(new int[]{1, 0}, ArrayExamples.reversed(input1));
 }
 ```
+
+![Lab Screenshot1](Screen Shot 2022-10-27 at 11.20.32 AM.png)
 
 The method was supposed to return a new array with the elements in reverse. However, the method returns the origial array. It also got rid of the old values, so it wasn't able to reverse the elements. To fix this, I did the below:
 
@@ -104,10 +126,13 @@ I wrote the following to test the method. It should have returned {0, 1}, but it
 public void testReverseInPlace2() {
     int[] input1 = {0, 1};
     ArrayExamples.reverseInPlace(input1);
-     assertArrayEquals(new int[]{1, 0}, input1);
+    assertArrayEquals(new int[]{1, 0}, input1);
 }
 ```
-I wasn't sure how to fix it, so I wrote the following since doing arr[i] = arr[arr.length - i - 1]; erases the old value, removing the ability to reverse the inputted value.
+
+![Lab Screenshot2](Screen Shot 2022-10-27 at 11.16.43 AM.png)
+
+The bug in this was arr[i] = arr[arr.length - i - 1]. In my example, arr[i] = 0, so arr[arr.length - i - 1] is 1, making arr[i] = 1, erasing the value of 0 and removing the ability to reverse the inputted values. I did the followng below so I can store the values in reverse in a new array so as to not risk erasing the old value.
 
 ```
 # code block
@@ -119,6 +144,6 @@ static void reverseInPlace(int[] arr) {
       j = j - 1; 
     }
     System.out.print(newArray); 
-  }
+}
 ```
 
