@@ -1,4 +1,4 @@
-# **Week 5 - Lab Report 3: Grep**
+# **Lab Report 3: Grep**
 
 ## **Option #1: -l**
 
