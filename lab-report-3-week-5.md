@@ -1,8 +1,8 @@
-# **Week 5 Lab Report: Grep**
+# **Week 5 - Lab Report 3: Grep**
 
-## **Option 1: -l**
+## **Option #1: -l**
 
-**Example 1**
+**Example #1**
 
 ```
 # code block
@@ -27,7 +27,7 @@ chapter-9.txt
 ```
 grep -l "chapter" *.txt returns the files that contains the word "chapter". This is helpful because instead of looking through each file to find which files have a word you're looking for, you can just type grep -l "chapter" *.txt. 
 
-**Example 2**
+**Example #2**
 
 ```
 # code block
@@ -39,7 +39,7 @@ chapter-3.txt
 
 I used grep -l "chapter" chapter-3.txt to check if "chapter" was in that file. This is helpful for you to check if a certain file has the word or phrase you're looking for.
 
-**Example 3**
+**Example #3**
 
 ```
 # code block
@@ -77,9 +77,9 @@ charlottekim@Charlottes-MacBook-Air docsearch % grep -1 "mortality" technical/bi
 
 grep -1 "mortality" technical/biomed/1468-6708-3-1.txt returns the paragraphs that contains the word "mortality" in the file 1468-6708-3-1.txt. This is useful to find certain paragraphs that contain the info you need.
 
-## **Option 2: -o**
+## **Option #2: -o**
 
-**Example 1**
+**Example #1**
 
 ```
 # code block
@@ -98,7 +98,7 @@ mortality
 
 grep -o "mortality" technical/biomed/1468-6708-3-1.txt returns every instance the word "mortality" shows up in the file 1468-6708-3-1.txt. This is helpful if you need to find how many instances of a word there are in a file.
  
-**Example 2**
+**Example #2**
 
 ```
 # code block
@@ -123,7 +123,7 @@ chapter-11.txt:help
 
 grep -o "help" *.txt returns every instance the word "mortality" shows up in the files that end in ".txt". This is helpful if you need to find how many instances of a word there are in all the files.
 
-**Example 3**
+**Example #3**
 
 ```
 # code block
@@ -153,9 +153,9 @@ gb-2003-4-4-r28.txt:2003
 
 grep -o "2003" *.txt returns the files that have "2003" in their names. This is helpful is you need to find a certain set of files or a certain file.
 
-## **Option 2: -n**
+## **Option #3: -n**
 
-**Example 1**
+**Example #1**
 
 ```
 # code block 
@@ -167,7 +167,7 @@ charlottekim@Charlottes-MacBook-Air biomed % grep -n "genomic" gb-2003-4-9-r60.t
 
 grep -n "genomic" gb-2003-4-9-r60.txt returns the line number that contains the word "genomic". This is helpful if you need to find where a certain word or phrase is.
 
-**Example 2**
+**Example #2**
 
 ```
 # code block 
@@ -193,7 +193,7 @@ charlottekim@Charlottes-MacBook-Air biomed % grep -n "genomic" *.txt
 
 grep -n "genomic" *.txt returns the line numbers in each file that contains the word "genomic." This is helpful if you need to use certain files that has the topic or word that you need.
 
-**Example 3**
+**Example #3**
 
 ```
 # code block 
